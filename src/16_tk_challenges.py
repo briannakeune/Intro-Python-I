@@ -100,25 +100,90 @@ print("New dictionary: ", randomDict)
 # Tuples
 
 # 1. Create a tuple
+my_first_tuple = ('Brianna', 'Keune', 25, 'Wisconsin')
+print('created tuple: ', my_first_tuple)
 # 2. Access tuple items
+print('accessing index 1 of tuple: ', my_first_tuple[1]) # Keune
+
 # 3. Change tuple values
+# tuple values are immutable...
+tmplist = list(my_first_tuple)
+tmplist[1] = "K"
+my_first_tuple = tuple(tmplist)
+print('Updated tuple value at 1: ', my_first_tuple) # K
+
 # 4. Loop through a tuple
+for x in my_first_tuple:
+    print('Looping through tuple: ', x)
+
 # 5. Check if a tuple item exists
+if 'Wisconsin' in my_first_tuple:
+    print('Wisconsin is in my first tuple.')
+
 # 6. Get the length of a tuple
+print('Length of myfirsttuple: ', len(my_first_tuple))
+
 # 7. Delete a tuple
+try:
+    del my_first_tuple
+    print('Deleted my_first_tuple')
+except KeyError: 
+    print('my_first_tuple does not exist')
+
 # 8. Use the tuple() constructor to create a tuple
+new_tuple= tuple(["Happy", "Birthday", "Frosty"])
+print('Used tuple constructor: ', new_tuple)
 
 # Sets
 
 # 1. Create a set
+movies = {'Finding Nemo', 'Aladdin', 'Onward'}
+print('created a set movies: ', movies)
+
 # 2. Loop through a set
+for x in movies:
+    print("Looping through set: ", movies)
+
 # 3. Check if an item exists
+if 'Aladdin' in movies:
+    print('Aladding is in movies')
+
 # 4. Add an item to a set
+movies.add('Big Hero 6')
+print('Added a new movie: ', movies)
+
 # 5. Add multiple items to a set
+movies.update(['The Princess Bride', 'Shrek'])
+print('Added multiple items to set: ', movies)
+
 # 6. Get the length of a set
+print('Length of movies: ', len(movies))
+
 # 7. Remove an item in a set
+try:
+    movies.remove('Shrek')
+    print('Shrek was deleted from movies.')
+except KeyError:
+    print('Shrek was not found.')
+
 # 8. Remove an item in a set by using the discard() method
+movies.discard('The Princess Bride')
+print('The Princess Bride was removed from movies: ', movies)
+
 # 9. Remove the last item in a set by using the pop() method
+print(movies.pop(), "Removed last item from movies")
+
 # 10. Empty a set
+movies.clear()
+print('Cleared movies: ', movies)
+
 # 11. Delete a set
+try:
+    del movies
+    print('Deleted movies set')
+except KeyError:
+    print('movies set not found.')
+
 # 12. Use the set() constructor to create a set
+new_set = set(["red", "yellow", "pink"])
+print('constrcted new set: ', new_set)
