@@ -44,18 +44,58 @@ print(f'Constrcted colors list: {colors}')
 # Dictionaries
 
 # 1. Create a dictionary
+person1 = {
+    'name': 'Brianna',
+    'age': 25
+}
+print('New dictionary: ', person1)
+
 # 2. Access the items of a dictionary
+print('Access name of dictionary: ', person1['name'])
+
 # 3. Change the value of a specific item in a dictionary
+person1['name'] = 'Brianna Keune'
+print('Changed name to be full name: ', person1['name'])
+
 # 4. Print all key names in a dictionary, one by one
+for key in person1:
+    print('Key names of person1: ', key)
+
 # 5. Print all values in a dictionary, one by one
+for value in person1.values():
+    print('Values of person1: ', value)
+
 # 6. Use the values() function to return values of a dictionary
+print('Values of person1 not in a loop: ', person1.values())
+
 # 7. Loop through both keys and values, by using the items() function
+for key, value in person1.items():
+    print('Items of person1: ', key, value)
+
 # 8. Check if a key exists
+if 'name' in person1:
+    print('Name exists: ', person1['name'])
+
 # 9. Get the length of a dictionary
+print('Length of dict: ', len(person1))
+
 # 10. Add an item to a dictionary
+person1['fav_color'] = 'yellow'
+print('Added fav_color to person1: ', person1)
+
 # 11. Remove an item from a dictionary
+try:
+    del person1['fav_color']
+    print('Deleted fav_color', person1)
+except KeyError:
+    print("Key 'fav_color' does not exist")
+
 # 12. Empty a dictionary
+print('Empty person1 dictionary: ', person1.clear())
+
 # 13. Use the dict() constructor to create a dictionary
+randomDict = dict()
+print("New dictionary: ", randomDict)
 
 # Tuples
 
