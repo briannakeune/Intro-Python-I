@@ -30,3 +30,24 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+def get_calendar(args):
+
+  def render_calendar(month=datetime.today().month, year=datetime.today().year):
+    print(calendar.month(year, month))
+  
+  default = "Please give arguments in [script, year, month] format."
+
+  def switch(x):
+    if x == 1:
+      render_calendar()
+    elif x == 2:
+      render_calendar(int(args[1]))
+    elif x == 3:
+      render_calendar(int(args[1]), int(args[2]))
+    else:
+      return default
+
+  return switch(len(args))
+
+get_calendar(sys.argv)
