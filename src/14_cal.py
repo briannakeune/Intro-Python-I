@@ -31,23 +31,48 @@ import sys
 import calendar
 from datetime import datetime
 
+
 def get_calendar(args):
+    invalid_input_message = "Please give arguments in script [month 1-12] [year 1970-3000] format."
 
-  def render_calendar(month=datetime.today().month, year=datetime.today().year):
-    print(calendar.month(year, month))
-  
-  default = "Please give arguments in [script, year, month] format."
+    # Renders a calendar with optional parameters:
+    # {int} - month within the range 1-12
+    # {int} - year within the range 1970-3000
+    def render_calendar(month=datetime.today().month, year=datetime.today().year):
+        print(calendar.month(int(year), int(month)))
 
-  def switch(x):
-    if x == 1:
-      render_calendar()
-    elif x == 2:
-      render_calendar(int(args[1]))
-    elif x == 3:
-      render_calendar(int(args[1]), int(args[2]))
-    else:
-      return default
+    def check_month_input(month_arg):
+        if month_arg.isdigit() and 1 <= int(month_arg) <= 12:
+            return True
 
-  return switch(len(args))
+    def check_year_input(year_arg):
+        if year_arg.isdigit() and 1970 <= int(year_arg) <= 3000:
+            return True
 
-get_calendar(sys.argv)
+    # A switch function to help render calendar based on how many arguments were passed in
+    def switch(args_given):
+        if args_given == 1:
+            render_calendar()
+
+        elif args_given == 2:
+            month = args[1]
+            if check_month_input(month):
+                render_calendar(month)
+            else:
+                return invalid_input_message
+
+        elif args_given == 3:
+            month = args[1]
+            year = args[2]
+            if check_month_input(month) and check_year_input(year):
+                render_calendar(month, year)
+            else:
+                return invalid_input_message
+
+        else:
+            return invalid_input_message
+
+    return switch(len(args))
+
+
+print(get_calendar(sys.argv))
