@@ -2,13 +2,13 @@
 
 # 1. Create a list
 numbers = [1, 2, 3, 4]
-print('Create a list: ', numbers) # [1, 2, 3, 4]
+print('Create a list: ', numbers)  # [1, 2, 3, 4]
 
 # 2. Access list items
-print('Access list items: ', numbers[2]) #[3]
+print('Access list items: ', numbers[2])  # [3]
 
 # 3. Change the value of a list item
-print('Changed index 2: ', numbers[2] + 3) #[6]
+print('Changed index 2: ', numbers[2] + 3)  # [6]
 
 # 4. Loop through a list
 for x in numbers:
@@ -103,14 +103,14 @@ print("New dictionary: ", randomDict)
 my_first_tuple = ('Brianna', 'Keune', 25, 'Wisconsin')
 print('created tuple: ', my_first_tuple)
 # 2. Access tuple items
-print('accessing index 1 of tuple: ', my_first_tuple[1]) # Keune
+print('accessing index 1 of tuple: ', my_first_tuple[1])  # Keune
 
 # 3. Change tuple values
 # tuple values are immutable...
 tmplist = list(my_first_tuple)
 tmplist[1] = "K"
 my_first_tuple = tuple(tmplist)
-print('Updated tuple value at 1: ', my_first_tuple) # K
+print('Updated tuple value at 1: ', my_first_tuple)  # K
 
 # 4. Loop through a tuple
 for x in my_first_tuple:
@@ -127,11 +127,11 @@ print('Length of myfirsttuple: ', len(my_first_tuple))
 try:
     del my_first_tuple
     print('Deleted my_first_tuple')
-except KeyError: 
+except KeyError:
     print('my_first_tuple does not exist')
 
 # 8. Use the tuple() constructor to create a tuple
-new_tuple= tuple(["Happy", "Birthday", "Frosty"])
+new_tuple = tuple(["Happy", "Birthday", "Frosty"])
 print('Used tuple constructor: ', new_tuple)
 
 # Sets

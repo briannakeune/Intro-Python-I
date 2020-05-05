@@ -28,7 +28,7 @@ print(x)
 
 # Print the length of list x
 # YOUR CODE HERE
-print('length of x is: ', len(x)) # 7
+print('length of x is: ', len(x))  # 7
 
 # Print all the values in x multiplied by 1000
 # YOUR CODE HERE

@@ -5,8 +5,11 @@
 # the sum. This is what you'd consider to be a regular, normal function.
 
 # YOUR CODE HERE
+
+
 def f1(a, b):
     return a + b
+
 
 print(f1(1, 2))
 
@@ -15,12 +18,15 @@ print(f1(1, 2))
 # Note: Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+
+
 def f2(*args):
     sum = 0
     for arg in args:
         sum += arg
     return sum
-        
+
+
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
 print(f2(1, 4, -12))            # Should print -7
@@ -33,7 +39,7 @@ a = [7, 6, 5, 4]
 # for this problem I was googling line 15, and I placed the word sum afterwords and came up with this link
 # https://github.com/LambdaSchool/Intro-Python-I/pull/568/commits/a1018a2200c6c6e2988c931a8a04a10a8f75c6be
 # it gives all the answers to this problem.
-# I found a cool medium article here on the astriek use: 
+# I found a cool medium article here on the astriek use (unpacking an arg):
 # https://medium.com/understand-the-python/understanding-the-asterisk-of-python-8b9daaa4a558
 
 print(f2(*a))    # Should print 22
@@ -44,8 +50,11 @@ print(f2(*a))    # Should print 22
 # Note: Google "python default arguments" for a hint.
 
 # YOUR CODE HERE
+
+
 def f3(a, b=1):
     return a + b
+
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -63,6 +72,7 @@ print(f3(8))     # Should print 9
 def f4(**kwargs):
     for key, value in kwargs.items():
         print(f'key: {key}, value: {value}')
+
 
 # Should print
 # key: a, value: 12
