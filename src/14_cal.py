@@ -59,7 +59,7 @@ def get_calendar(args):
             if check_month_input(month):
                 render_calendar(month)
             else:
-                return invalid_input_message
+                print(invalid_input_message)
 
         elif args_given == 3:
             month = args[1]
@@ -67,12 +67,12 @@ def get_calendar(args):
             if check_month_input(month) and check_year_input(year):
                 render_calendar(month, year)
             else:
-                return invalid_input_message
+                print(invalid_input_message)
 
         else:
-            return invalid_input_message
+            print(invalid_input_message)
 
     return switch(len(args))
 
 
-print(get_calendar(sys.argv))
+get_calendar(sys.argv)
