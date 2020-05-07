@@ -30,3 +30,49 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+
+def get_calendar(args):
+    invalid_input_message = "Please give arguments in script [month 1-12] [year 1970-3000] format."
+
+    # Renders a calendar with optional parameters:
+    # {int} - month within the range 1-12
+    # {int} - year within the range 1970-3000
+    def render_calendar(month=datetime.today().month, year=datetime.today().year):
+        print(calendar.month(int(year), int(month)))
+
+    def check_month_input(month_arg):
+        if month_arg.isdigit() and 1 <= int(month_arg) <= 12:
+            return True
+
+    def check_year_input(year_arg):
+        if year_arg.isdigit() and 1970 <= int(year_arg) <= 3000:
+            return True
+
+    # A switch function to help render calendar based on how many arguments were passed in
+    def switch(args_given):
+        if args_given == 1:
+            render_calendar()
+
+        elif args_given == 2:
+            month = args[1]
+            if check_month_input(month):
+                render_calendar(month)
+            else:
+                print(invalid_input_message)
+
+        elif args_given == 3:
+            month = args[1]
+            year = args[2]
+            if check_month_input(month) and check_year_input(year):
+                render_calendar(month, year)
+            else:
+                print(invalid_input_message)
+
+        else:
+            print(invalid_input_message)
+
+    return switch(len(args))
+
+
+get_calendar(sys.argv)
